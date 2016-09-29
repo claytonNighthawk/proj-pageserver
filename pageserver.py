@@ -81,9 +81,19 @@ def respond(sock):
     print("\nRequest was {}\n".format(request))
 
     parts = request.split()
+    print("parts", parts)
     if len(parts) > 1 and parts[0] == "GET":
-        transmit(STATUS_OK, sock)
-        transmit(CAT, sock)
+        URL = parts[1] 
+        print("URL", URL) 
+        if URL.startswith("/pages")  and (URL.endswith(".html") or URL.endswith(".css")):
+            pageDir = "./{}".format("/".join(URL[3:]))
+            print("pageDir", pageDir)
+            with open(URL) as f:
+                FILE = ".{}".format(f.read())
+            print("FILE", FILE)
+            transmit(STATUS_OK, sock)
+            transmit(FILE, sock)
+            transmit(CAT, sock)
     else:
         transmit(STATUS_NOT_IMPLEMENTED, sock)        
         transmit("\nI don't handle this request: {}\n".format(request), sock)
