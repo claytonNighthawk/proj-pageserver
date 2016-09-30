@@ -96,8 +96,10 @@ def respond(sock):
             except:
                 print(STATUS_NOT_FOUND)
                 transmit(STATUS_NOT_FOUND, sock)
+                transmit(STATUS_NOT_FOUND, sock)
         else:
             print(STATUS_FORBIDDEN)
+            transmit(STATUS_FORBIDDEN, sock)
             transmit(STATUS_FORBIDDEN, sock)
     else:
         transmit(STATUS_NOT_IMPLEMENTED, sock)        
