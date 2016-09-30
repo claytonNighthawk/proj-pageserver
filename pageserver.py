@@ -81,12 +81,13 @@ def respond(sock):
     print("\nRequest was {}\n".format(request))
 
     parts = request.split()
-    #print("parts", parts)
     if len(parts) > 1 and parts[0] == "GET":
         filePath = "./pages{}".format(parts[1]) 
         print("filePath", filePath) 
-        acceptable_endings = (".html", ".css", ".ico")
-        if filePath.endswith(acceptable_endings):
+        acceptable_endings = (".html", ".css")
+        unacceptable_strings = ("//", "~", "..")
+
+        if filePath.endswith(acceptable_endings) or not any(x in filePath for x in unacceptable_strings): 
             try:
                 with open(filePath) as f:
                     text = f.read()
