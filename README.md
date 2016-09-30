@@ -29,7 +29,7 @@ the 'tests' directory) and some manual tests.  In addition to your
 development environment, test on a Raspberry Pi running Ubuntu. 
 * Revise this README.md file:  Erase what is no longer relevant and 
   add identifying information. 
-  ### Author: Lil (Nancy) Magill , jill@uoregon.edu ###
+  ### Author: Clayton Kilmer, kilmer@uoregon.edu ###
 
 * Commit and push ALL your changes to github (except those not under 
   revision control)
