@@ -87,7 +87,7 @@ def respond(sock):
         acceptable_endings = (".html", ".css")
         unacceptable_strings = ("//", "~", "..")
 
-        if filePath.endswith(acceptable_endings) or not any(x in filePath for x in unacceptable_strings): 
+        if filePath.endswith(acceptable_endings) and not any(x in filePath for x in unacceptable_strings): 
             try:
                 with open(filePath) as f:
                     text = f.read()
