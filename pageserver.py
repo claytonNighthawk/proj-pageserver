@@ -83,7 +83,7 @@ def respond(sock):
     parts = request.split()
     if len(parts) > 1 and parts[0] == "GET":
         filePath = "./pages{}".format(parts[1]) 
-        print("filePath", filePath) 
+#        print("filePath", filePath) 
         acceptable_endings = (".html", ".css")
         unacceptable_strings = ("//", "~", "..")
 
