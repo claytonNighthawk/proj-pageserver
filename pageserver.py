@@ -94,7 +94,7 @@ def respond(sock):
                     text = f.read()
                 transmit(STATUS_OK, sock)
                 transmit(text, sock)
-            except:
+            except FileNotFoundError:
                 print(STATUS_NOT_FOUND)
                 transmit(STATUS_NOT_FOUND, sock)
                 transmit(STATUS_NOT_FOUND, sock)
