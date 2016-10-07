@@ -87,6 +87,7 @@ def respond(sock):
         acceptable_endings = (".html", ".css")
         unacceptable_strings = ("//", "~", "..")
 
+        #transmits the status messages twice, for the actual message and once so the user knows what happened
         if filePath.endswith(acceptable_endings) and not any(x in filePath for x in unacceptable_strings): 
             try:
                 with open(filePath) as f:
